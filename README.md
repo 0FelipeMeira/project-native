@@ -1,50 +1,75 @@
-# Welcome to your Expo app 👋
+# DoseCerta
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Aplicativo mobile em React Native para controle de horários de medicamentos, pensado especialmente para idosos e seus cuidadores/familiares. O objetivo é garantir que os medicamentos sejam tomados corretamente, oferecendo lembretes com alarmes sonoros e acompanhamento remoto pelos filhos ou responsáveis.
 
-## Get started
+## Funcionalidades
 
-1. Install dependencies
+- **Cadastro de Usuários:** Permite que filhos/responsáveis criem perfis para os idosos.
+- **Cadastro de Medicamentos:** Adicione/remova medicamentos, defina dosagem, horários e frequência.
+- **Alarmes e Lembretes:** Notificações locais com alarme para lembrar o idoso de tomar o remédio na hora certa.
+- **Confirmação de Tomada:** O idoso pode marcar se tomou o medicamento, gerando um histórico.
+- **Acompanhamento Remoto:** Filhos podem acompanhar o histórico de tomadas e receber notificações caso haja esquecimento.
+- **Interface Simples e Acessível:** Layout adaptado para facilitar o uso por idosos.
 
+## Tecnologias Utilizadas
+
+- [React Native](https://reactnative.dev/)
+- [Expo](https://expo.dev/) (opcional)
+- [AsyncStorage](https://react-native-async-storage.github.io/async-storage/) ou [SQLite](https://docs.expo.dev/versions/latest/sdk/sqlite/) para armazenamento local
+- [Firebase](https://firebase.google.com/) (autenticação e sincronização de dados)
+- [react-native-push-notification](https://github.com/zo0r/react-native-push-notification) ou [expo-notifications](https://docs.expo.dev/versions/latest/sdk/notifications/) para alarmes
+
+## Instalação
+
+1. **Clone o repositório:**
+   ```bash
+   git clone https://github.com/0FelipeMeira/project-native.git
+   cd project-native
+   ```
+
+2. **Instale as dependências:**
    ```bash
    npm install
+   # ou
+   yarn install
    ```
 
-2. Start the app
+3. **Configure variáveis de ambiente:**
+   - Crie um arquivo `.env` e adicione as chaves necessárias (Firebase, etc).
 
+4. **Execute o projeto:**
    ```bash
    npx expo start
+   # ou
+   npm run android
+   # ou
+   npm run ios
    ```
 
-In the output, you'll find options to open the app in a
+## Estrutura do Projeto
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+project-native/
+├── src/
+│   ├── components/
+│   ├── screens/
+│   ├── services/
+│   └── utils/
+├── App.js
+├── package.json
+└── ...
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Como Contribuir
 
-## Learn more
+1. Fork este repositório.
+2. Crie uma branch para sua feature/bugfix:
+   ```bash
+   git checkout -b minha-feature
+   ```
+3. Faça commit de suas alterações.
+4. Envie um Pull Request.
 
-To learn more about developing your project with Expo, look at the following resources:
+---
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+**DoseCerta** — Mais segurança e tranquilidade para famílias e idosos no controle dos medicamentos!

@@ -14,18 +14,18 @@ const TouchableOpacity = styled.TouchableOpacity<{
   width?: string;
 }>`
   width: ${(props) => props.width || "auto"};
-  background-color: #ff0000ff;
   background-color: ${(props) =>
-    props.type === "secondary" ? "transparent" : "#ff0000ff"};
+    props.type === "secondary" ? "transparent" : "#7100b3ff"};
   border-radius: 8px;
   padding-vertical: 12px;
   padding-horizontal: 16px;
   align-items: center;
+  font-weight: 900;
 `;
 
-export function Button({ title, type, width }: ButtonProps) {
+export function Button({ title, type, width, ...rest }: ButtonProps) {
   return (
-    <TouchableOpacity type={type} width={width}>
+    <TouchableOpacity type={type} width={width} {...rest}>
       <BaseText $color={type === "secondary" ? "#000" : "#FFF"}>
         {title}
       </BaseText>

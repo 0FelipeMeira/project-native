@@ -25,6 +25,11 @@ export default function LoginScreen() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  const resetForm = () => {
+    setUsername("");
+    setPassword("");
+  };
+
   return (
     <LoginView>
       <Title>Login</Title>
@@ -42,9 +47,9 @@ export default function LoginScreen() {
       />
       <FlexView>
         <Button type={"secondary"} title="Esqueci a senha" onPress={() => {}} />
-        <Button type={"secondary"} title="Reset de senha" onPress={() => {}} />
+        <Button type={"secondary"} title="Reset de senha" onPress={resetForm} />
       </FlexView>
-      <Button width="60%" title="Entrar" onPress={() => {}} />
+      <Button width="60%" title="Entrar" onPress={() => console.log("AA")} />
     </LoginView>
   );
 }
