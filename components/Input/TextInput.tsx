@@ -1,4 +1,5 @@
 import styled from "styled-components/native";
+import { BaseText } from "../Text/BaseText";
 
 const TextInputStyle = styled.TextInput`
   width: 100%;
@@ -9,6 +10,18 @@ const TextInputStyle = styled.TextInput`
   padding-horizontal: 8px;
 `;
 
+const TextInputContainerStyle = styled.View`
+  justify-content:start;
+  width: 100%;
+  height: auto;
+`
+
 export const TextInput = (props: any) => {
-  return <TextInputStyle {...props} />;
+  return (
+    <TextInputContainerStyle>
+      <BaseText>{props.Text}</BaseText>
+      <TextInputStyle {...props} />
+    </TextInputContainerStyle>
+  )
 };
+

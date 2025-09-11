@@ -3,4 +3,5 @@ import { BaseText } from "./BaseText";
 
 export const Title = styled(BaseText)`
   font-size: 32px;
+  font-weight: bold;
 `;

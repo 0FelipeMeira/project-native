@@ -3,12 +3,13 @@ import { TextInput } from "@/components/Input/TextInput";
 import { Title } from "@/components/Text/Title";
 import React, { useState } from "react";
 import { styled } from "styled-components/native";
+import { Image } from "react-native";
 
 const LoginView = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
-  background-color: #f5f5f5;
+  background-color: #ffffffff;
   gap: 16px;
   padding: 10%;
 `;
@@ -32,15 +33,15 @@ export default function LoginScreen() {
 
   return (
     <LoginView>
-      <Title>Login</Title>
+      <Image source={require("./../assets/images/logo.png")}></Image>
       <TextInput
-        placeholder="Usuário"
+        Text={"Digite seu usuário:"}
         value={username}
         onChangeText={setUsername}
         autoCapitalize="none"
       />
       <TextInput
-        placeholder="Senha"
+        Text={"Digite sua senha:"}
         value={password}
         onChangeText={setPassword}
         secureTextEntry
