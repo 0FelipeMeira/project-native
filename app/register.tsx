@@ -4,7 +4,7 @@ import { Title } from "@/components/Text/Title";
 import React, { useState } from "react";
 import { styled } from "styled-components/native";
 
-const LoginView = styled.View`
+const RegisterView = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
@@ -13,26 +13,21 @@ const LoginView = styled.View`
   padding: 10%;
 `;
 
-const FlexView = styled.View`
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-export default function LoginScreen({ navigation }: any) {
+export default function RegisterScreen({ navigation }: any) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
-  const resetForm = () => {
-    setUsername("");
-    setPassword("");
-  };
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [name, setName] = useState("");
 
   return (
-    <LoginView>
-      <Title>Login</Title>
+    <RegisterView>
+      <Title>Register</Title>
+      <TextInput
+        placeholder="Nome"
+        value={name}
+        onChangeText={setName}
+        secureTextEntry
+      />
       <TextInput
         placeholder="Usuário"
         value={username}
@@ -45,15 +40,18 @@ export default function LoginScreen({ navigation }: any) {
         onChangeText={setPassword}
         secureTextEntry
       />
-      <FlexView>
-        <Button type={"secondary"} title="Esqueci a senha" onPress={() => {}} />
-        <Button type={"secondary"} title="Reset de senha" onPress={resetForm} />
-      </FlexView>
+      <TextInput
+        placeholder="Confirme a senha"
+        value={confirmPassword}
+        onChangeText={setConfirmPassword}
+        secureTextEntry
+      />
+
       <Button
         width="60%"
         title="Entrar"
-        onPress={() => navigation.navigate("Register")}
+        onPress={() => navigation.navigate("Login")}
       />
-    </LoginView>
+    </RegisterView>
   );
 }
