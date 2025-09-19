@@ -1,6 +1,7 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import LoginScreen from "./login";
 import RegisterScreen from "./register";
+import SaveMedicineScreen from "./save_medicine";
 
 const Stack = createStackNavigator();
 
@@ -11,6 +12,7 @@ const App = () => {
 
   return (
     <Stack.Navigator screenOptions={options}>
+      <Stack.Screen name="SaveMedicine" component={SaveMedicineScreen} />
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="Register" component={RegisterScreen} />
     </Stack.Navigator>

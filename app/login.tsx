@@ -11,6 +11,7 @@ const LoginView = styled.View`
   background-color: #f5f5f5;
   gap: 16px;
   padding: 10%;
+  padding-top: 60%;
 `;
 
 const FlexView = styled.View`
@@ -19,6 +20,22 @@ const FlexView = styled.View`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+`;
+
+const HeroImageView = styled.Image`
+  position: absolute;
+  top: 0;
+  width: 100lvw;
+  height: 40lvh;
+  filter: blur(1.1px) saturate(90%);
+`;
+
+const HeroLogo = styled.Image`
+  position: absolute;
+  top: 10lvh;
+  height: 20lvh;
+  width: 55lvw;
+  filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.25));
 `;
 
 export default function LoginScreen({ navigation }: any) {
@@ -32,6 +49,9 @@ export default function LoginScreen({ navigation }: any) {
 
   return (
     <LoginView>
+      <HeroImageView source={require("../assets/images/happy-couple.png")} />
+      <HeroLogo source={require("../assets/images/logo.png")} />
+
       <Title>Login</Title>
       <TextInput
         placeholder="Usuário"

@@ -11,6 +11,24 @@ const RegisterView = styled.View`
   background-color: #f5f5f5;
   gap: 16px;
   padding: 10%;
+  padding-top: 70%;
+`;
+
+const HeroImageView = styled.Image`
+  position: absolute;
+  top: 0;
+  width: 100lvw;
+  height: 36lvh;
+  filter: blur(1.1px) saturate(90%);
+  transform: scale(1.2);
+`;
+
+const HeroLogo = styled.Image`
+  position: absolute;
+  top: 10lvh;
+  height: 20lvh;
+  width: 55lvw;
+  filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.25));
 `;
 
 export default function RegisterScreen({ navigation }: any) {
@@ -21,6 +39,8 @@ export default function RegisterScreen({ navigation }: any) {
 
   return (
     <RegisterView>
+      <HeroImageView source={require("../assets/images/grandaughter.jpg")} />
+      <HeroLogo source={require("../assets/images/logo.png")} />
       <Title>Register</Title>
       <TextInput
         placeholder="Nome"
